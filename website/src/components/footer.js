@@ -1,6 +1,7 @@
 import React from 'react';
 import {Container, Row, Col} from "react-bootstrap"
 import Logo from "../images/logo.png"
+import Image from "gatsby-image"
 import "./footer.css"
 
 const Footer = () => {
@@ -10,7 +11,8 @@ const Footer = () => {
                 <br/>
                 <Row>
                     <Col>
-                        <img src="Prevengase\website\src\images\logo.png" />
+
+                        <img src={Logo} alt="logo" />
                     </Col>
                     <Col>
                     <h4>Informes</h4>
