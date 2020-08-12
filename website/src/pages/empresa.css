@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Gelasio&family=MuseoModerno:wght@200&family=Red+Rose:wght@300&display=swap');
+
+
+.infoEmp{
+    background-color: white;
+    color: #216093;
+    font-family: 'Gelasio', serif;
+}
+
+.formEmp{
+    border: #216093 3px solid;
+
+}
+.preguntas{
+    color: #216093;
+
+}
