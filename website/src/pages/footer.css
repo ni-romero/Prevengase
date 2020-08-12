@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Gelasio&family=MuseoModerno:wght@200&family=Red+Rose:wght@300&display=swap');
+
+
+.footer{
+    border-top: #B48B1B 3px solid;
+    background-color: white;
+    color: #216093;
+    margin: auto;
+    font-family: 'Gelasio', serif;
+}
