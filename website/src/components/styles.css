@@ -1,0 +1,17 @@
+.formCel {/* Formulario padre de celualr*/
+    background-color: #21609381;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.548);
+}
+
+ #dropdown-basic-button{  /* para cambiar el tamaño del boton de empresa en el formulario celular*/
+    width: 100%;
+    background-color: #21609381;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+form#formCelular input::placeholder {
+    background-color: #0d6bb854;
+    
+}
+.shadow {
+    box-shadow: 10px 8px 15px rgba(0, 0, 0, 0.548);
+}

@@ -3,12 +3,12 @@ import { Form, Row, Col, Button, Dropdown, DropdownButton  } from "react-bootstr
 
 const FormCelular = () => {
   return (
-    <Form>
+    <Form id="formCelular" >
       <Form.Group className=" pt-2 ">
         <Form.Label className="w-100 text-center">
           Ingrese Nombre Titular{" "}
         </Form.Label>
-        <Form.Control type="text" placeholder="Nombre" className="col-11 "/>
+        <Form.Control type="text" placeholder="Nombre" className="col-11 shadow border-primary rounded"/>
       </Form.Group>
       <Row>
         <Col >
@@ -16,7 +16,7 @@ const FormCelular = () => {
             <Form.Label className="w-100 text-center">
               Ingrese Numero{" "}
             </Form.Label>
-            <Form.Control type="text" placeholder="Numero" />
+            <Form.Control type="text" placeholder="Numero" className=" shadow border-primary"/>
           </Form.Group>
         </Col>
         <Col className="p-0 m-0">
@@ -24,10 +24,11 @@ const FormCelular = () => {
             <Form.Label className="w-75 text-center ">
               Ingrese Empresa{" "}
             </Form.Label>
-            <DropdownButton id="dropdown-basic-button" variant="ligth" className="border text-center w-75" title="Empresa">
-              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+            <DropdownButton id="dropdown-basic-button"  className=" text-center w-75  " title="Empresa">
+              <Dropdown.Item href="#/action-1">Personal</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Movistar</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Claro</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Desconozco</Dropdown.Item>
             </DropdownButton>
           </Form.Group>
         </Col>
@@ -38,9 +39,10 @@ const FormCelular = () => {
           <Form.Control
             type="email"
             placeholder="Email"
-            className="col-6 mr-5"
+            className="col-6 mr-5  border-primary shadow"
+            
           />
-          <Button variant="dark" className="ml-5 ">
+          <Button variant="dark" className="ml-5 shadow ">
             Enviar
           </Button>
         </Col>
