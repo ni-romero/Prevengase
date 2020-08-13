@@ -2,7 +2,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import Healmet, { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet'
 
 import Header from "./header"
 import "./layout.css"
@@ -33,7 +33,6 @@ const Layout = ({ children }) => {
           padding: `0 1.0875rem 1.45rem`,
           backgroundColor: 'white',
           opacity: '0.9',
-          left: '0',
           textAlign: 'center'
 
         }}
