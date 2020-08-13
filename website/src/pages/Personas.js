@@ -1,4 +1,6 @@
 import React from 'react'
+import Layout from "../components/layout"
+import Footer from "../components/footer"
 import { Container, Row, Col, Form, Button } from "react-bootstrap"
 import "./style.css"
 import { Helmet } from 'react-helmet'
@@ -9,6 +11,7 @@ const Personas = () => {
      <Helmet>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     </Helmet>
+    <Layout>
       <h1 className="text-center p-3 tituloPer">Informe de Persona</h1>
       <Container>
         <Row>
@@ -56,7 +59,10 @@ const Personas = () => {
           </Col>
         </Row>
       </Container>
-
+      <br/>
+      
+      </Layout>
+      <Footer/>
     </>
   )
 }

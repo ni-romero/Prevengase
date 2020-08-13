@@ -30,18 +30,8 @@ const Layout = ({ children }) => {
         />
       </Helmet>
       <Header />
-      <div
-        style={{
-          margin: `0 auto`,
-          width: "50%",
-          padding: `0 1.0875rem 1.45rem`,
-          backgroundColor: "white",
-          opacity: "0.9",
-          textAlign: "center",
-        }}
-      >
+      
       {children}
-      </div>
     </>
   )
 }
