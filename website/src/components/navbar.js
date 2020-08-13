@@ -1,28 +1,32 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Navbar ,Nav} from "react-bootstrap";
+import { Navbar ,Nav } from "react-bootstrap";
+import Logo from "../images/logo.jpeg"
+
 
 const Navigation = () => 
+
 (       
     
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="light" variant="ligth" className="shadow m-0 p-0 ">
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
          <Navbar.Collapse id="responsive-navbar-nav">
-      <Navbar.Brand href="/">
+      <Navbar.Brand href="/" >
         <img
-          alt=""
-          src="/logo.svg"
-          width="30"
-          height="30"
-          className="d-inline-block align-top"
+          alt="logo"
+          src={Logo}
+          width="80"
+          height="80"
+          className="d-inline-block mr-3 "
         />{' '}
         Prevengase
       </Navbar.Brand>
-      <Nav className="ml-auto w-50 d-flex justify-content-around">
-      <Nav.Link href="/persona">Persona</Nav.Link>
-      <Nav.Link href="/empresa">Empresa</Nav.Link>
-      <Nav.Link href="/celular">Celular</Nav.Link>
-      <Nav.Link href="/precio">Automotor</Nav.Link>
+      <Nav className="ml-auto w-50 d-flex justify-content-around " 
+      >
+      <Nav.Link href="/persona" className="border-bottom clase ">Persona</Nav.Link>
+      <Nav.Link href="/empresa" className="border-bottom clase">Empresa</Nav.Link>
+      <Nav.Link href="/celular"   className="border-bottom clase">Celular</Nav.Link>
+      <Nav.Link href="/precio" className="border-bottom clase">Automotor</Nav.Link>
     </Nav>
     </Navbar.Collapse>
     </Navbar>

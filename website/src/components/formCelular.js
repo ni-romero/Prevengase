@@ -42,7 +42,7 @@ const FormCelular = () => {
             className="col-6 mr-5  border-primary shadow"
             
           />
-          <Button variant="dark" className="ml-5 shadow ">
+          <Button variant="outline-primary text-dark" className="ml-5 shadow ">
             Enviar
           </Button>
         </Col>

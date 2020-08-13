@@ -12,6 +12,12 @@ form#formCelular input::placeholder {
     background-color: #0d6bb854;
     
 }
-.shadow {
+.shadow {/*sombra de los imput y el boton*/
     box-shadow: 10px 8px 15px rgba(0, 0, 0, 0.548);
 }
+ .clase:hover{/* estilos de los link de navbar */
+  
+     border-radius: 20%;
+     box-shadow: 0px 8px 3px rgba(0, 0, 0, 0.171);
+ }
+ 
