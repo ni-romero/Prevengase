@@ -26,7 +26,7 @@ const Navigation = () =>
       <Nav.Link href="/persona" className="border-bottom clase ">Persona</Nav.Link>
       <Nav.Link href="/Empresa" className="border-bottom clase">Empresa</Nav.Link>
       <Nav.Link href="/celular"   className="border-bottom clase">Celular</Nav.Link>
-      <Nav.Link href="/precio" className="border-bottom clase">Automotor</Nav.Link>
+      <Nav.Link href="/automotor" className="border-bottom clase">Automotor</Nav.Link>
     </Nav>
     </Navbar.Collapse>
     </Navbar>

@@ -38,17 +38,17 @@ const Empresa = () => {
                 Informe Empresa
               </Alert>
               <Form.Row>
-                <Form.Group as={Col}>
+                <Form.Group as={Col} className="p-2">
                   <Form.Control type="name" placeholder="Razon Social" />
                 </Form.Group>
 
-                <Form.Group as={Col}>
-                  <Form.Control type="" placeholder="Cuit" />
+                <Form.Group as={Col} className="p-2">
+                  <Form.Control type="" placeholder="Cuit"  />
                 </Form.Group>
               </Form.Row>
-              <Form.Row>
+              <Form.Row className="p-2">
                 <Form.Group as={Col} controlId="formGridEmail">
-                  <Form.Control type="email" placeholder="Enter email" />
+                  <Form.Control type="email" placeholder="Ingrese email" />
                 </Form.Group>
                 <Form.Group as={Col}>
                   <Button variant="primary" type="submit">
@@ -59,6 +59,7 @@ const Empresa = () => {
             </Form>
           </Col>
         </Row>
+        <br/>
         <Alert variant="primary">Contenido Informe de Empresa</Alert>
         <Row>
           <Col>
