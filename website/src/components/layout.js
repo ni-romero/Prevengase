@@ -13,7 +13,7 @@ import Header from "./header"
 import Footer from "./footer"
 import "./footer.css"
 import "./layout.css"
-import Empresa from "../pages/Empresa"
+// import Empresa from "../pages/Empresa"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <Empresa/>
+        {/* <Empresa/> */}
        <Footer/>
       </div>
     </>
