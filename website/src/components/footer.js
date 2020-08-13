@@ -12,7 +12,7 @@ const Footer = () => {
                 <Row>
                     <Col>
 
-                        <img src={Logo} alt="logo" />
+                        <img src={Logo} alt="logo"  className="logo"/>
                     </Col>
                     <Col>
                     <h4>Informes</h4>

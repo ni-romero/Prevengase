@@ -5,6 +5,8 @@
     border-top: #B48B1B 3px solid;
     background-color: white;
     color: #216093;
-    margin: auto;
-    font-family: 'Gelasio', serif;
+     font-family: 'Gelasio', serif;
+}
+.logo{
+    max-height: 200px;
 }

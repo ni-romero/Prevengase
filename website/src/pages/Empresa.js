@@ -1,10 +1,14 @@
 import React from "react"
+import Layout from "../components/layout";
+import Footer from "../components/footer"
 import { Container, Row, Form, Col, Button, Alert } from "react-bootstrap"
 import "./empresa.css"
 
 const Empresa = () => {
   return (
     <>
+    <Layout>
+      <br/>
       <Container>
         <div className="infoEmp">
           <h3>
@@ -120,6 +124,8 @@ const Empresa = () => {
           </p>
         </ul>
       </Container>
+      </Layout>
+      <Footer/>
     </>
   )
 }
