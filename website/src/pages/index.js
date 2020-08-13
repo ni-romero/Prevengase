@@ -12,7 +12,7 @@ const IndexPage = () => (
   <div style={{
     backgroundImage: 'url(https://images.unsplash.com/photo-1487611459768-bd414656ea10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)',
     widht: '100%',
-    // height: '100vh',
+    minHeight: '100vh',
     
   }}>
     <Layout>

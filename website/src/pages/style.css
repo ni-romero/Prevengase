@@ -1,0 +1,17 @@
+.formuPa{
+    background-color: rgb(124, 187, 187);
+    padding: 15px;
+}
+.botonPers{
+    background-color: white;
+    border: solid 1px #B48B1B;
+    color: black;
+}
+.botonPers:hover{
+    background-color:#216093;
+    color: white;
+
+}
+.tituloPer{
+   color:  #B48B1B; 
+}
