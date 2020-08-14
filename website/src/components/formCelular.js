@@ -1,51 +1,62 @@
 import React from "react"
-import { Form, Row, Col, Button, Dropdown, DropdownButton  } from "react-bootstrap"
+import {
+  Form,
+  Row,
+  Col,
+  Button,
+  Dropdown,
+  DropdownButton,
+} from "react-bootstrap"
 
 const FormCelular = () => {
   return (
-    <Form id="formCelular" >
-      <Form.Group className=" pt-2 ">
-        <Form.Label className="w-100 text-center">
-          Ingrese Nombre Titular{" "}
-        </Form.Label>
-        <Form.Control type="text" placeholder="Nombre" className="col-11 shadow border-primary rounded"/>
-      </Form.Group>
+    <Form id="formCelular">
       <Row>
-        <Col >
+        <Col>
           <Form.Group>
-            <Form.Label className="w-100 text-center">
-              Ingrese Numero{" "}
-            </Form.Label>
-            <Form.Control type="text" placeholder="Numero" className=" shadow border-primary"/>
+            <Form.Label className="w-100 text-start ">Numero </Form.Label>
+            <Form.Control
+              type="text"
+              placeholder=" Ingrese Numero "
+              className=" shadow botonEmpresa"
+            />
+            <Form.Text className="text-muted">Ejemplo 1130587239</Form.Text>
           </Form.Group>
         </Col>
-        <Col className="p-0 m-0">
-          <Form.Group>
-            <Form.Label className="w-75 text-center ">
+        <Col className="p-0 mr-4">
+          <Form.Group >
+            <Form.Label className="w-100 text-start  ">
               Ingrese Empresa{" "}
             </Form.Label>
-            <DropdownButton id="dropdown-basic-button"  className=" text-center w-75  " title="Empresa">
-              <Dropdown.Item href="#/action-1">Personal</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Movistar</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Claro</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Desconozco</Dropdown.Item>
-            </DropdownButton>
+            <Form.Control as="select" className=" text-center botonEmpresa  ">
+              <option>Personal</option>
+              <option>Movistar</option>
+              <option>Claro</option>
+              <option>Desconozco</option>
+            </Form.Control>
           </Form.Group>
         </Col>
       </Row>
       <Form.Group>
-        <Form.Label className="w-50 text-center">Ingrese Emal </Form.Label>
+        <Form.Label className="w-50 text-start "> Email </Form.Label>
         <Col className=" d-flex m-0 p-0 ">
           <Form.Control
             type="email"
-            placeholder="Email"
-            className="col-6 mr-5  border-primary shadow"
-            
+            placeholder=" Ingrese Email"
+            className=" botonEmpresa shadow "
           />
-          <Button variant="outline-primary text-dark" className="ml-5 shadow ">
-            Enviar
-          </Button>
         </Col>
+        <Form.Text className="text-muted">
+          Ingrese el Email donde que desea recibir el informe.
+        </Form.Text>
+        <Button
+          variant="outline-primary "
+          size="lg"
+          className="mt-3 shadow botonPers "
+          block
+        >
+          Comprar informe $390
+        </Button>
       </Form.Group>
     </Form>
   )
