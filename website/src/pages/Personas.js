@@ -15,7 +15,7 @@ const Personas = () => {
       <h1 className="text-center p-3 tituloPer">Informe de Persona</h1>
       <Container>
         <Row>
-          <Col xs={6}>
+          <Col xs={12} md={10} xl={6}>
             <div className="text-center">
           <i class="fas fa-users fa-4x text-info"></i>
         
@@ -30,7 +30,7 @@ const Personas = () => {
             {/* </ul> */}
             </div>
           </Col>
-          <Col xs={6}>
+          <Col xs={12} md={10} xl={6}>
             <br/>
             <div className="formuPa">
               <Form>
