@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import { Navbar ,Nav } from "react-bootstrap";
 import Logo from "../images/logo.jpeg"
 
@@ -8,10 +7,9 @@ const Navigation = () =>
 
 (       
     
-    <Navbar collapseOnSelect expand="lg" bg="light" variant="ligth" className="shadow m-0 p-0 ">
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-         <Navbar.Collapse id="responsive-navbar-nav">
-      <Navbar.Brand href="/" >
+    <Navbar collapseOnSelect expand="lg" bg="ligth" className="shadow m-0 p-0 ">
+        
+        <Navbar.Brand href="/" className="text-primary" >
         <img
           alt="logo"
           src={Logo}
@@ -21,12 +19,15 @@ const Navigation = () =>
         />{' '}
         Prevengase
       </Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav " className="bg-primary" />
+         <Navbar.Collapse id="responsive-navbar-nav" >
+     
       <Nav className="ml-auto w-50 d-flex justify-content-around " 
       >
-      <Nav.Link href="/Personas" className="border-bottom clase ">Persona</Nav.Link>
-      <Nav.Link href="/Empresa" className="border-bottom clase">Empresa</Nav.Link>
-      <Nav.Link href="/celular"   className="border-bottom clase">Celular</Nav.Link>
-      <Nav.Link href="/automotor" className="border-bottom clase">Automotor</Nav.Link>
+      <Nav.Link href="/Personas" className="border-bottom clase text-primary ">Persona</Nav.Link>
+      <Nav.Link href="/Empresa" className="border-bottom clase text-primary">Empresa</Nav.Link>
+      <Nav.Link href="/celular"   className="border-bottom clase text-primary">Celular</Nav.Link>
+      <Nav.Link href="/automotor" className="border-bottom clase text-primary">Automotor</Nav.Link>
     </Nav>
     </Navbar.Collapse>
     </Navbar>

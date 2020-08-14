@@ -20,4 +20,12 @@ form#formCelular input::placeholder {
      border-radius: 20%;
      box-shadow: 0px 8px 3px rgba(0, 0, 0, 0.171);
  }
+ .custom-toggler {
+    border-color: rgb(255,102,203);
+    background-image: url("data:image/svg+xml;..") !important;
+  } 
+  .navbar-toggler-icon{
+    border-color: rgb(255,102,203) !important;
+    
+  }
  
