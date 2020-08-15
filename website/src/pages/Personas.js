@@ -4,7 +4,26 @@ import Footer from "../components/footer"
 import { Container, Row, Col, Form, Button } from "react-bootstrap"
 import "./style.css"
 import { Helmet } from 'react-helmet'
+import {useState} from 'react';
+
+
+
 const Personas = () => {
+
+  
+  const [datos, setDatos] = useState({
+    nombre: '',
+    email: ''
+})
+
+const handleInputChange = (event) => {
+    // console.log(event.target.name)
+    // console.log(event.target.value)
+    setDatos({
+        ...datos,
+        [event.target.name] : event.target.value
+    })
+}
   return (
    
     <>
@@ -38,14 +57,14 @@ const Personas = () => {
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label className="text-center">Nombre o DNI</Form.Label>
 
-                  <Form.Control type="name" placeholder="Ingrese nombre o DNI" />
+                  <Form.Control type="name" placeholder="Ingrese nombre o DNI"onChange={handleInputChange} name="nombre" />
 
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
                   <Form.Label className="text-center">Email</Form.Label>
 
-                  <Form.Control type="email" placeholder="Ingrese e-mail" />
+                  <Form.Control type="email" placeholder="Ingrese e-mail" onChange={handleInputChange} name="apellido" />
                   <Form.Text className="text-muted">
                     Ingrese el Email donde que desea recibir el informe.
     </Form.Text>
