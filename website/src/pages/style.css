@@ -38,8 +38,15 @@
     opacity: 0.9;
     text-align: center;
 }
+.fallido{
+    background-color: darkred;
+    color: whitesmoke;
+}
+.contenedorcard{
+    background-color: black;
+}
 @media (min-width: 300px) and (max-width: 850px){
     .hola{
         font-size: 1rem;
-    }
-}
+    }}
+

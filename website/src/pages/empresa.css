@@ -8,8 +8,9 @@
 }
 
 .formEmp{
-    border: #216093 3px solid;
-
+    
+    background-color: rgb(124, 187, 187);
+    padding: 15px;
 }
 .preguntas{
     color: #216093;
@@ -17,4 +18,14 @@
 }
 .auto{
     margin-left: 100px;
+}
+.botonPers{
+    background-color: white;
+    border: solid 1px #B48B1B;
+    color: black;
+}
+.botonPers:hover{
+    background-color:#216093;
+    color: white;
+
 }

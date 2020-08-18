@@ -3,9 +3,19 @@ import Layout from "../components/layout"
 import Footer from "../components/footer"
 import Auto from "../images/auto.png"
 import { Container, Row, Form, Col, Button, Alert } from "react-bootstrap"
+import {useState} from 'react'
+import { useForm } from 'react-hook-form'
 import "./empresa.css"
 
 const Automotor = () => {
+
+  const { register, handleSubmit, errors } = useForm();
+
+  const onSubmit = (data, e) =>{
+    console.log(data)
+    e.target.reset()
+  }
+
   return (
     <>
       <Layout>
@@ -16,59 +26,70 @@ const Automotor = () => {
               {" "}
               <u>Informe de titular patente automotor</u>
             </h3>
-            <p>
-              Consultá por Patente a qué Registro del Automotor se encuenta
-              inscripto un vehículo en Argentina
-            </p>
           </div>
           <Row>
             <Col>
-              <img alt="auto"  className="auto" src={Auto} width="250" height="250" />
+              <p className="infoEmp">
+                Consultá por Patente a qué Registro del Automotor se encuenta
+                inscripto un vehículo en Argentina
+              </p>
+              <img
+                alt="auto"
+                className="auto"
+                src={Auto}
+                width="250"
+                height="250"
+              />
             </Col>
 
             <Col>
-              <Form className="formEmp">
-                <Alert variant="info" className="text-center">
+              <Form className="formEmp" onSubmit={handleSubmit(onSubmit)}>
+                <h3 className="text-center">
                   Informe titular patente automotor
-                </Alert>
-                <Form.Row>
-                  <Form.Group as={Col} className="p-2">
-                    <Form.Control type="name" placeholder="Ingrese patente" />
-                  </Form.Group>
-                </Form.Row>
-                <Form.Row className="p-2">
-                  <Form.Group as={Col} controlId="formGridEmail">
-                    <Form.Control type="email" placeholder="Ingrese email" />
-                  </Form.Group>
-                  <Form.Group as={Col}>
-                    <Button variant="primary" type="submit">
-                      Pagar $750
-                    </Button>
-                  </Form.Group>
-                </Form.Row>
+                </h3>
+
+                <Form.Control type="name" name="patente" placeholder="Ingrese patente" 
+                ref={register({
+                  required:  { value: true, message:'Patente es obligatorio'},
+                  maxLength: { value: 7, message:'no mas de 7 caracteres' },
+                  minLength: { value:6, message:'no menos de 6 caracteres'}
+                })} />
+                <span className="text-danger text-small d-block mb-2">{errors?.patente?.message}</span>
+                <br />
+              
+                <Form.Control type="email" placeholder="Ingrese email" name="mail" ref={register({ required: {value:true, message:'Email es obligatorio'},  })}/>
+                <span className="text-danger text-small d-block mb-2">{errors?.mail?.message}</span>
+                <Form.Text className="text-muted">
+                  Ingrese el Email donde que desea recibir el informe.
+                </Form.Text>
+                
+                <br />
+                <Button variant="primary" className="botonPers" type="submit"  size="lg" block>
+                  Comprar informe $750
+                </Button>
               </Form>
             </Col>
           </Row>
           <br />
-          <Alert variant="primary">Contenido Informe de Empresa</Alert>
+          <Alert variant="primary">Contenido Informe de Automotor</Alert>
           <Row>
             <Col>
               <ul className="preguntas">
-                <li>Fecha de constitución</li>
-                <li>Domicilio fiscal</li>
-                <li>Teléfonos</li>
-                <li>Situación fiscal</li>
-                <li>Socios (CUIT, Nombre)</li>
-                <li>Vínculos Societarios (Cuit, Razón Social)</li>
+                <li>Titular de patente</li>
+                <li>Porcentaje de propiedad</li>
+                <li>Marca</li>
+                <li>Modelo</li>
+                <li>Version</li>
+                
               </ul>
             </Col>
             <Col>
               <ul className="preguntas">
-                <li>Bancos con los que opera</li>
-                <li>Participaciones Societarias</li>
-                <li>Cheques rechazados detallado</li>
-                <li>Juicios comerciales</li>
-                <li>Quiebras</li>
+                
+                <li>Año de fabricacion</li>
+                <li>Direccion</li>
+                <li>localidad</li>
+                <li>Provincia</li>
               </ul>
             </Col>
           </Row>
@@ -77,7 +98,7 @@ const Automotor = () => {
           <ol className="preguntas">
             <li>
               Completá el formulario con los datos solicitados y luego clic en
-              "Pagar $".
+              "Comprar informe $".
             </li>
             <li>
               Para abonar serás direccionado a Mercado Pago (No es necesario
