@@ -50,6 +50,9 @@
         font-size: 1rem;
     
     }
+    .tituloDos{
+        display: none;
+    }
     .rapidoFa{
         display: none;
     }

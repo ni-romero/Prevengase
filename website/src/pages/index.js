@@ -15,12 +15,12 @@ const IndexPage = () => (
 <div className="hola m-auto p-1 col-xl-6 col-lg-10 col-sm-10 col-xs-10">
    
 
-      <h1 className="tituloInd text-center text-dark">Informes sobre personas, empresas, celulares y automotor.</h1>
+      <h1 className="tituloInd text-center">Informes sobre personas, empresas, celulares y automotor.</h1>
            <h3 className="rapidoFa" style={{
         color: '#B48B1B'
       }}>RÁPIDO, FÁCIL Y EN SIMPLES PASOS!</h3>
 
-      <h4>Nuestro campo de actividad está vinculado con la búsqueda artesanal de información, toda ella encuadrada en el art. 5 inc. 2 de la ley 25.326 de Argentina
+      <h4 className="tituloDos">Nuestro campo de actividad está vinculado con la búsqueda artesanal de información, toda ella encuadrada en el art. 5 inc. 2 de la ley 25.326 de Argentina
          y de legítima obtención. </h4>
 
          <Accordion defaultActiveKey="0">
