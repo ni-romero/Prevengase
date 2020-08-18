@@ -8,48 +8,14 @@ import { Card, Accordion } from "react-bootstrap"
 const IndexPage = () => (
   <>
   <Layout>
-  {/* <div
-        style={{
-          margin: `0 auto`,
-          width: "50%",
-          padding: `0 1.0875rem 1.45rem`,
-          backgroundColor: "white",
-          opacity: "0.9",
-          textAlign: "center",
-        }}
-      > */}
       
      
-  <div className="w-100" style={{
-    backgroundImage: 'url(https://images.unsplash.com/photo-1487611459768-bd414656ea10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)',
-   
-    minHeight: '100vh',
-    margin: `0 auto`,
-          width: "50%",
-          padding: `0 1.0875rem 1.45rem`,
-          backgroundColor: "white",
-          opacity: "0.9",
-          textAlign: "center",
+  <div className="m-auto p-1 padreInd" >
     
-  }}>
-    
-<div className="hola"
-style={{
-  margin: `0 auto`,
-  width: "50%",
-  padding: `0 1.0875rem 1.45rem`,
-  backgroundColor: "white",
-  opacity: "0.9",
-  textAlign: "center",
-}}
->
+<div className="hola m-auto p-1 col-xl-6 col-lg-10 col-sm-10 col-xs-10">
    
 
-      <h1 style={{
-        textAlign: 'center',
-        color: 'black',
-
-      }}>Informes sobre personas, empresas, celulares y automotor.</h1>
+      <h1 className="text-center text-dark">Informes sobre personas, empresas, celulares y automotor.</h1>
            <h3 style={{
         color: '#B48B1B'
       }}>RÁPIDO, FÁCIL Y EN SIMPLES PASOS!</h3>
