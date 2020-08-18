@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../components/layout";
 import {Container , Row , Col } from "react-bootstrap";
 import FormCelular from "../components/formCelular";
+import axiosInstance from "../components/axiosInstance"
 import Image from "../components/image"
 
 

@@ -5,15 +5,19 @@ import Auto from "../images/auto.png"
 import { Container, Row, Form, Col, Button, Alert } from "react-bootstrap"
 import {useState} from 'react'
 import { useForm } from 'react-hook-form'
+import axiosInstance from "../components/axiosInstance"
 import "./empresa.css"
 
 const Automotor = () => {
 
   const { register, handleSubmit, errors } = useForm();
 
-  const onSubmit = (data, e) =>{
+  const onSubmit = async (data, e) =>{
     console.log(data)
-
+    let precio=750
+const response=  await axiosInstance.post("/", {precio:precio})
+console.log(response.data.redirectUrl)
+window.location.href= response.data.redirectUrl
     e.target.reset()
   }
 
