@@ -1,9 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import Footer from "../components/footer"
-import Image from "../components/image"
-import SEO from "../components/seo"
-import { Nav,Card, Accordion, AccordionCollapse, AccordionToggle } from "react-bootstrap"
+import {Card, Accordion } from "react-bootstrap"
 
 
 
