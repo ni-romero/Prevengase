@@ -15,16 +15,16 @@ const Footer = () => {
                         <img src={Logo} alt="logo"  className="logo"/>
                     </Col>
                     <Col>
-                    <h4>Informes</h4>
+                    <h4 className="text-center mt-2">Informes</h4>
                     <ul>
-                        <li>Persona y/o Empresa: $390 </li>
-                        <li>informe patente: $ 750</li>
-                        <li>informe celular: $ 750</li>
+                        <li className="text-center">Persona y/o Empresa: $390 </li>
+                        <li className="text-center">informe patente: $ 750</li>
+                        <li className="text-center">informe celular: $ 750</li>
                     </ul>
                     </Col>
                     <Col>
-                    <h4>Contacto</h4>
-                    <p>Mail: info@prevengase.com</p>
+                    <h4 className="text-center mt-2">Contacto</h4>
+                    <p className="text-center">Mail: info@prevengase.com</p>
                     </Col>
                 </Row>
             </Container>

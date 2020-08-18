@@ -12,13 +12,13 @@ const IndexPage = () => (
   <Layout>
       
      
-  <div className="m-auto p-1 padreInd" >
+  <div className="m-auto p-5 padreInd" >
     
 <div className="hola m-auto p-1 col-xl-6 col-lg-10 col-sm-10 col-xs-10">
    
 
-      <h1 className="text-center text-dark">Informes sobre personas, empresas, celulares y automotor.</h1>
-           <h3 style={{
+      <h1 className="tituloInd text-center text-dark">Informes sobre personas, empresas, celulares y automotor.</h1>
+           <h3 className="rapidoFa" style={{
         color: '#B48B1B'
       }}>RÁPIDO, FÁCIL Y EN SIMPLES PASOS!</h3>
 
@@ -53,23 +53,5 @@ const IndexPage = () => (
   </>
 )
 
-
-
-// const IndexPage = () => (
-//   <Layout>
-//     <SEO title="Home" />
-   
-//     <Container className="bg-dark">
-//       <h1>Prevengase</h1>
-//       <p>Welcome to your new Gatsby site.</p>
-//       <p>Now go build something great.</p>
-//       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-//         <Image />
-//       </div>
-//     </Container>
-//     <Link to="/page-2/">Go to page 2</Link> <br />
-//     <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-//   </Layout>
-// )
 
 export default IndexPage

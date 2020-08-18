@@ -19,7 +19,7 @@ const Navigation = () =>
           height="80"
           className="d-inline-block mr-3 "
         />{' '}
-        Prevengase
+        Inicio
       </Navbar.Brand>
       <Nav className="ml-auto w-50 d-flex justify-content-around " 
       >

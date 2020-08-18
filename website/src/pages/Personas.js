@@ -24,13 +24,14 @@ const handleInputChange = (event) => {
         ...datos,
         [event.target.name] : event.target.value 
 
-
+        
     }) 
 }
 const enviarDatos = (event) =>{
   // event.preventDefault();
   console.log(datos.nombre + ' ' + datos.email)
   
+
 }
   return (
     <>
@@ -59,7 +60,7 @@ const enviarDatos = (event) =>{
           <Col xs={12} md={10} xl={6}>
             <br/>
             <div className="formuPa">
-              <Form onSubmit={handleSubmit(enviarDatos)}>
+              <Form onSubmit={handleSubmit(enviarDatos)} method="POST">
                 <h3 className="text-center">Persona</h3>
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label className="text-center">Nombre o DNI</Form.Label>
@@ -120,13 +121,20 @@ const enviarDatos = (event) =>{
                     {errors.email && errors.email.message}
                 </span>
                   <Form.Text className="text-muted">
-                    Ingrese el Email donde que desea recibir el informe.
-    </Form.Text>
+                    Ingrese el Email donde desea recibir el informe.
+                  </Form.Text>
                 </Form.Group>
 
-                <Button className="botonPers" type="submit" size="lg" block>
-                  Comprar informe $390
-  </Button>
+                
+                <Button className="botonPers" type="submit" size="lg" block> Comprar informe $390 
+                  <script
+                   src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+                   data-preference-id='267818641-2711766f-49a0-4275-970f-31d0c5c8e79c'>
+                   
+                 
+                  </script>
+                  </Button>
+              
               </Form>
             </div>
           </Col>
