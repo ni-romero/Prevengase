@@ -18,7 +18,7 @@ const pagoFallido = () => {
             />
           </Card.Body>
           <Card.Footer className="text-muted">
-            <Button variant="primary" size="lg" >volver</Button>
+            <Button variant="danger" size="lg" >volver</Button>
           </Card.Footer>
         </Card>
       </Container>
