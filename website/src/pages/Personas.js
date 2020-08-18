@@ -6,7 +6,7 @@ import "./style.css"
 import { Helmet } from 'react-helmet'
 import {useState} from 'react'
 import { useForm } from 'react-hook-form'
-
+import axiosInstance from "../components/axiosInstance"
 
 
 const Personas = () => {
@@ -22,15 +22,19 @@ const handleInputChange = (event) => {
     // console.log(event.target.value)
     setDatos({
         ...datos,
-        [event.target.name] : event.target.value 
-
-        
+        [event.target.name] : event.target.value  
     }) 
+   
 }
-const enviarDatos = (event) =>{
+const enviarDatos = async (event) =>{
   // event.preventDefault();
   console.log(datos.nombre + ' ' + datos.email)
-  
+  let precio=390
+const response=  await axiosInstance.post("/", {precio:precio})
+console.log(response.data.redirectUrl)
+window.location.href= response.data.redirectUrl
+
+
 
 }
   return (
@@ -44,7 +48,7 @@ const enviarDatos = (event) =>{
         <Row>
           <Col xs={12} md={10} xl={6}>
             <div className="text-center">
-          <i class="fas fa-users fa-4x text-info"></i>
+          <i className="fas fa-users fa-4x text-info"></i>
         
             {/* <ul> */}
               <p>-Buscá personas, familiares y amigos</p>
@@ -65,7 +69,7 @@ const enviarDatos = (event) =>{
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label className="text-center">Nombre o DNI</Form.Label>
 
-                  <Form.Control type="name"
+                  <Form.Control type="text"
                    placeholder="Ingrese nombre o DNI"
                    onChange={handleInputChange} 
                    name="nombre" 
@@ -76,8 +80,8 @@ const enviarDatos = (event) =>{
                         message: 'Nombre es requerido'
                         }, 
                     maxLength: {
-                        value: 15, 
-                        message: 'No más de 15 carácteres!'
+                        value: 40, 
+                        message: 'No más de 40 carácteres!'
                         },
                     minLength: {
                         value: 4, 
