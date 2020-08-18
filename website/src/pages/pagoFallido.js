@@ -1,9 +1,13 @@
 import React from "react"
 import { Container, Card, Button } from "react-bootstrap"
 import "./style.css"
+import Navbar from "../components/navbar"
+import Footer from "../components/footer"
+
 const pagoFallido = () => {
   return (
     <>
+    <Navbar/>
       <Container  className="p-5 ">
         <Card className="text-center contenedorcard">
           <Card.Header className="fallido">
@@ -18,10 +22,11 @@ const pagoFallido = () => {
             />
           </Card.Body>
           <Card.Footer className="text-muted">
-            <Button variant="danger" size="lg" >volver</Button>
+            <span className="text-bold" size="lg" >Lo sentimos!</span>
           </Card.Footer>
         </Card>
       </Container>
+      <Footer/>
     </>
   )
 }
