@@ -3,9 +3,19 @@ import Layout from "../components/layout"
 import Footer from "../components/footer"
 import Auto from "../images/auto.png"
 import { Container, Row, Form, Col, Button, Alert } from "react-bootstrap"
+import {useState} from 'react'
+import { useForm } from 'react-hook-form'
 import "./empresa.css"
 
 const Automotor = () => {
+
+  const { register, handleSubmit, errors } = useForm();
+
+  const onSubmit = (data, e) =>{
+    console.log(data)
+    e.target.reset()
+  }
+
   return (
     <>
       <Layout>
@@ -33,18 +43,26 @@ const Automotor = () => {
             </Col>
 
             <Col>
-              <Form className="formEmp">
+              <Form className="formEmp" onSubmit={handleSubmit(onSubmit)}>
                 <h3 className="text-center">
                   Informe titular patente automotor
                 </h3>
 
-                <Form.Control type="name" placeholder="Ingrese patente" />
+                <Form.Control type="name" name="patente" placeholder="Ingrese patente" 
+                ref={register({
+                  required:  { value: true, message:'Patente es obligatorio'},
+                  maxLength: { value: 7, message:'no mas de 7 caracteres' },
+                  minLength: { value:6, message:'no menos de 6 caracteres'}
+                })} />
+                <span className="text-danger text-small d-block mb-2">{errors?.patente?.message}</span>
                 <br />
-
-                <Form.Control type="email" placeholder="Ingrese email" />
+              
+                <Form.Control type="email" placeholder="Ingrese email" name="mail" ref={register({ required: {value:true, message:'Email es obligatorio'},  })}/>
+                <span className="text-danger text-small d-block mb-2">{errors?.mail?.message}</span>
                 <Form.Text className="text-muted">
                   Ingrese el Email donde que desea recibir el informe.
                 </Form.Text>
+                
                 <br />
                 <Button variant="primary" className="botonPers" type="submit"  size="lg" block>
                   Comprar informe $750
@@ -68,7 +86,7 @@ const Automotor = () => {
             <Col>
               <ul className="preguntas">
                 
-                <li>Ano de fabricacion</li>
+                <li>Año de fabricacion</li>
                 <li>Direccion</li>
                 <li>localidad</li>
                 <li>Provincia</li>

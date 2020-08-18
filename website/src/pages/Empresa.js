@@ -2,10 +2,20 @@ import React from "react"
 import Layout from "../components/layout"
 import Footer from "../components/footer"
 import { Container, Row, Form, Col, Button, Alert } from "react-bootstrap"
+import {useState} from 'react'
+import { useForm } from 'react-hook-form'
 import "./empresa.css"
 
 const Empresa = () => {
+  const { register, handleSubmit, errors } = useForm();
+
+  const onSubmit = (data, e) =>{
+    console.log(data)
+    e.target.reset()
+  }
+
   return (
+    
     <>
       <Layout>
         <br />
@@ -34,27 +44,41 @@ const Empresa = () => {
             </Col>
 
             <Col>
-              <Form className="formEmp">
+              <Form className="formEmp" onSubmit={handleSubmit(onSubmit)}>
                 <h3 className="text-center">Informe Empresa</h3>
-                <Form.Text className="text-muted text-center">
+                <Form.Text className="text-bold text-center">
                      Ingrese uno de los dos campos
                     </Form.Text>
                 <Form.Row>
                   <Form.Group as={Col} >
-                    <Form.Control type="name" placeholder="Razon Social" />
+                    <Form.Control type="name" name="razon" placeholder="Razon Social" 
+                     ref={register({
+                      maxLength: { value: 60, message:'no mas de 60 caracteres' },
+                      
+                    })}/>
+                    <span className="text-danger text-small d-block mb-2">{errors?.razon?.message}</span>
+                <br />
                   </Form.Group>
                    
                   <Form.Group as={Col} >
-                    <Form.Control type="" placeholder="Cuit" />
+                    <Form.Control type="number" name="cuit" placeholder="Cuit" 
+                    ref={register({
+                      maxLength: { value: 11, message:'no mas de 11 caracteres' },
+                      minLength: { value: 11, message:'no menos de 11 caracteres'}
+                    })}/>
+                    <span className="text-danger text-small d-block mb-2">{errors?.cuit?.message}</span>
+                
                   </Form.Group>
                   
                 </Form.Row>
                 
-                  <br/> 
-                    <Form.Control type="email" placeholder="Ingrese email" />
-                    <Form.Text className="text-muted">
+                  
+                    <Form.Control type="email" placeholder="Ingrese email" name="mail" ref={register({ required: {value:true, message:'Email es obligatorio'},  })} />
+                    <span className="text-danger text-small d-block mb-2">{errors?.mail?.message}</span>
+                    <Form.Text className="text-bold">
                       Ingrese el Email donde que desea recibir el informe.
                     </Form.Text>
+                    
                   <br/>
                  
                 

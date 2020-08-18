@@ -15,3 +15,11 @@
 .tituloPer{
    color:  #B48B1B; 
 }
+
+.fallido{
+    background-color: darkred;
+    color: whitesmoke;
+}
+.contenedorcard{
+    background-color: black;
+}
