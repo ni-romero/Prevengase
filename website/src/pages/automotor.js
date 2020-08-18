@@ -13,6 +13,7 @@ const Automotor = () => {
 
   const onSubmit = (data, e) =>{
     console.log(data)
+
     e.target.reset()
   }
 
@@ -66,6 +67,7 @@ const Automotor = () => {
                 <br />
                 <Button variant="primary" className="botonPers" type="submit"  size="lg" block>
                   Comprar informe $750
+                  
                 </Button>
               </Form>
             </Col>

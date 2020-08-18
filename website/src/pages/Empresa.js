@@ -5,13 +5,19 @@ import { Container, Row, Form, Col, Button, Alert } from "react-bootstrap"
 import {useState} from 'react'
 import { useForm } from 'react-hook-form'
 import "./empresa.css"
+import axiosInstance from "../components/axiosInstance"
 
 const Empresa = () => {
   const { register, handleSubmit, errors } = useForm();
 
-  const onSubmit = (data, e) =>{
+  const onSubmit = async (data, e) =>{
     console.log(data)
+    let precio=390
+const response=  await axiosInstance.post("/", {precio:precio})
+console.log(response.data.redirectUrl)
+window.location.href= response.data.redirectUrl
     e.target.reset()
+
   }
 
   return (
@@ -44,7 +50,7 @@ const Empresa = () => {
             </Col>
 
             <Col>
-              <Form className="formEmp" onSubmit={handleSubmit(onSubmit)}>
+              <Form className="formEmp" onSubmit={handleSubmit(onSubmit)}method="POST">
                 <h3 className="text-center">Informe Empresa</h3>
                 <Form.Text className="text-bold text-center">
                      Ingrese uno de los dos campos
@@ -85,6 +91,12 @@ const Empresa = () => {
                 
                     <Button variant="primary" className="botonPers" type="submit" size="lg" block>
                       Comprar informe $390
+                      <script
+                   src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+                   data-preference-id='267818641-2711766f-49a0-4275-970f-31d0c5c8e79c'>
+                   
+                 
+                  </script>
                     </Button>
                   
               </Form>
