@@ -2,7 +2,6 @@ import React from "react";
 import { Navbar ,Nav } from "react-bootstrap";
 import Logo from "../images/logo.jpeg"
 
-
 const Navigation = () => 
 
 (       
@@ -19,7 +18,7 @@ const Navigation = () =>
         />{' '}
         Inicio
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav " className="bg-primary" />
+      <Navbar.Toggle aria-controls="responsive-navbar-nav " className="bg-info mr-2" />
          <Navbar.Collapse id="responsive-navbar-nav" >
      
       <Nav className="ml-auto w-50 d-flex justify-content-around " 

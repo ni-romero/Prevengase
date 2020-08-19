@@ -9,11 +9,11 @@ const Footer = () => {
             <Container  className="footer">
                 <br/>
                 <Row>
-                    <Col>
+                    <Col xl={4} lg={4} xs={4}>
 
                         <Image src={Logo} alt="logo"  className="logo"/>
                     </Col>
-                    <Col>
+                    <Col xl={4} lg={4} xs={4}className="footInfo">
                     <h4 className="text-center mt-2">Informes</h4>
                     <ul>
                         <li className="text-center">Persona y/o Empresa: $390 </li>
@@ -21,7 +21,7 @@ const Footer = () => {
                         <li className="text-center">informe celular: $ 750</li>
                     </ul>
                     </Col>
-                    <Col>
+                    <Col xl={4} lg={4} xs={4}>
                     <h4 className="text-center mt-2">Contacto</h4>
                     <p className="text-center">Mail: info@prevengase.com</p>
                     </Col>

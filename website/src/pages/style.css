@@ -45,6 +45,9 @@
 .contenedorcard{
     background-color: black;
 }
+.tituloAutom{
+    color:#B48B1B ;
+}
 @media (min-width: 300px) and (max-width: 850px){
     .hola{
         font-size: 1rem;

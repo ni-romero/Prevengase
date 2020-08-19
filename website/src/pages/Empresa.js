@@ -7,38 +7,35 @@ import "./empresa.css"
 import axiosInstance from "../components/axiosInstance"
 
 const Empresa = () => {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm()
 
-  const onSubmit = async (data, e) =>{
+  const onSubmit = async(data, e) => {
     console.log(data)
-    let precio=390
-const response=  await axiosInstance.post("/", {precio:precio})
-console.log(response.data.redirectUrl)
-window.location.href= response.data.redirectUrl
+    let precio = 390
+    const response = await axiosInstance.post("/", { precio: precio })
+    console.log(response.data.redirectUrl)
+    window.location.href = response.data.redirectUrl
     e.target.reset()
-
   }
 
   return (
-    
     <>
       <Layout>
         <br />
         <Container>
-          <div className="infoEmp">
-            <h3>
+          <div className="text-center">
+            <h3  style={{color:'#B48B1B'}}>
               {" "}
-              <u>Informe de empresa</u>
+             Informe de empresa
             </h3>
-            
           </div>
           <Row>
-            <Col>
-            <p className="infoEmp">
-              Un informe completo sobre una Empresa en Argentina. Obtené
-              Domicilios, Actividades, Teléfonos, Socios, Cheques, Marcas, NIC
-              Argentina y más...
-            </p>
+            <Col xs={12} md={10} xl={6}>
+              <p className="infoEmp">
+                Un informe completo sobre una Empresa en Argentina. Obtené
+                Domicilios, Actividades, Teléfonos, Socios, Cheques, Marcas, NIC
+                Argentina y más...
+              </p>
               <ul>
                 <li>Información completa sobre una empresa</li>
                 <li>Investigaciones Privadas</li>
@@ -48,56 +45,87 @@ window.location.href= response.data.redirectUrl
               </ul>
             </Col>
 
-            <Col>
-              <Form className="formEmp" onSubmit={handleSubmit(onSubmit)}method="POST">
+            <Col xs={12} md={10} xl={6}>
+              <Form
+                className="formEmp"
+                onSubmit={handleSubmit(onSubmit)}
+                method="POST"
+              >
                 <h3 className="text-center">Informe Empresa</h3>
                 <Form.Text className="text-bold text-center">
-                     Ingrese uno de los dos campos
-                    </Form.Text>
+                  Ingrese uno de los dos campos
+                </Form.Text>
                 <Form.Row>
-                  <Form.Group as={Col} >
-                    <Form.Control type="name" name="razon" placeholder="Razon Social" 
-                     ref={register({
-                      maxLength: { value: 60, message:'no mas de 60 caracteres' },
-                      
-                    })}/>
-                    <span className="text-danger text-small d-block mb-2">{errors?.razon?.message}</span>
-                <br />
+                  <Form.Group as={Col}>
+                    <Form.Control
+                      type="name"
+                      name="razon"
+                      placeholder="Razon Social"
+                      ref={register({
+                        maxLength: {
+                          value: 60,
+                          message: "no mas de 60 caracteres",
+                        },
+                      })}
+                    />
+                    <span className="text-danger text-small d-block mb-2">
+                      {errors?.razon?.message}
+                    </span>
+                    <br />
                   </Form.Group>
-                   
-                  <Form.Group as={Col} >
-                    <Form.Control type="number" name="cuit" placeholder="Cuit" 
-                    ref={register({
-                      maxLength: { value: 11, message:'no mas de 11 caracteres' },
-                      minLength: { value: 11, message:'no menos de 11 caracteres'}
-                    })}/>
-                    <span className="text-danger text-small d-block mb-2">{errors?.cuit?.message}</span>
-                
+
+                  <Form.Group as={Col}>
+                    <Form.Control
+                      type="number"
+                      name="cuit"
+                      placeholder="Cuit"
+                      ref={register({
+                        maxLength: {
+                          value: 11,
+                          message: "no mas de 11 caracteres",
+                        },
+                        minLength: {
+                          value: 11,
+                          message: "no menos de 11 caracteres",
+                        },
+                      })}
+                    />
+                    <span className="text-danger text-small d-block mb-2">
+                      {errors?.cuit?.message}
+                    </span>
                   </Form.Group>
-                  
                 </Form.Row>
-                
-                  
-                    <Form.Control type="email" placeholder="Ingrese email" name="mail" ref={register({ required: {value:true, message:'Email es obligatorio'},  })} />
-                    <span className="text-danger text-small d-block mb-2">{errors?.mail?.message}</span>
-                    <Form.Text className="text-bold">
-                      Ingrese el Email donde que desea recibir el informe.
-                    </Form.Text>
-                    
-                  <br/>
-                 
-                
-                
-                    <Button variant="primary" className="botonPers" type="submit" size="lg" block>
-                      Comprar informe $390
-                      <script
-                   src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-                   data-preference-id='267818641-2711766f-49a0-4275-970f-31d0c5c8e79c'>
-                   
-                 
-                  </script>
-                    </Button>
-                  
+
+                <Form.Control
+                  type="email"
+                  placeholder="Ingrese email"
+                  name="mail"
+                  ref={register({
+                    required: { value: true, message: "Email es obligatorio" },
+                  })}
+                />
+                <span className="text-danger text-small d-block mb-2">
+                  {errors?.mail?.message}
+                </span>
+                <Form.Text className="text-bold">
+                  Ingrese el Email donde que desea recibir el informe.
+                </Form.Text>
+
+                <br />
+
+                <Button
+                  variant="primary"
+                  className="botonPers"
+                  type="submit"
+                  size="lg"
+                  block
+                >
+                  Comprar informe $390
+                  <script
+                    src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+                    data-preference-id="267818641-2711766f-49a0-4275-970f-31d0c5c8e79c"
+                  ></script>
+                </Button>
               </Form>
             </Col>
           </Row>

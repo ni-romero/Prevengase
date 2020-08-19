@@ -26,27 +26,26 @@ window.location.href= response.data.redirectUrl
         <br />
         <Container>
           <div className="infoEmp">
-            <h3>
-              {" "}
-              <u>Informe de titular patente automotor</u>
+            <h3 className="tituloAutom">Informe de titular patente automotor
             </h3>
           </div>
           <Row>
-            <Col>
-              <p className="infoEmp">
-                Consultá por Patente a qué Registro del Automotor se encuenta
-                inscripto un vehículo en Argentina
-              </p>
+            <Col  xs={12} md={10} lg={6} xl={6}>
+              
               <img
                 alt="auto"
                 className="auto"
                 src={Auto}
-                width="250"
-                height="250"
+                width="200"
+                height="200"
               />
+              <p className="infoEmp">
+                Consultá por Patente a qué Registro del Automotor se encuenta
+                inscripto un vehículo en Argentina
+              </p>
             </Col>
 
-            <Col>
+            <Col  xs={12} md={10} lg={6} xl={6}>
               <Form className="formEmp" onSubmit={handleSubmit(onSubmit)}>
                 <h3 className="text-center">
                   Informe titular patente automotor

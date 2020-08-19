@@ -10,9 +10,9 @@ const IndexPage = () => (
   <Layout>
       
      
-  <div className="m-auto p-5 padreInd" >
+  <div className="m-auto pt-5 padreInd" >
     
-<div className="hola m-auto p-1 col-xl-6 col-lg-10 col-sm-10 col-xs-10">
+<div className="hola m-auto p-1 col-xl-6 col-lg-10 col-sm-12 col-xs-12">
    
 
       <h1 className="tituloInd text-center">Informes sobre personas, empresas, celulares y automotor.</h1>
