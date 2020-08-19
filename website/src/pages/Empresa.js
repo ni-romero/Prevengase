@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "../components/layout"
 import Footer from "../components/footer"
 import { Container, Row, Form, Col, Button, Alert } from "react-bootstrap"
-import {useState} from 'react'
 import { useForm } from 'react-hook-form'
 import "./empresa.css"
 import axiosInstance from "../components/axiosInstance"

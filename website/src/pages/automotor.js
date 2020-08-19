@@ -3,7 +3,6 @@ import Layout from "../components/layout"
 import Footer from "../components/footer"
 import Auto from "../images/auto.png"
 import { Container, Row, Form, Col, Button, Alert } from "react-bootstrap"
-import {useState} from 'react'
 import { useForm } from 'react-hook-form'
 import axiosInstance from "../components/axiosInstance"
 import "./empresa.css"

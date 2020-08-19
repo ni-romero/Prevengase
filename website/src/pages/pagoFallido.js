@@ -1,5 +1,5 @@
 import React from "react"
-import { Container, Card, Button } from "react-bootstrap"
+import { Container, Card} from "react-bootstrap"
 import "./style.css"
 import Navbar from "../components/navbar"
 import Footer from "../components/footer"
@@ -17,7 +17,7 @@ const pagoFallido = () => {
           </Card.Header>
           <Card.Body>
             <img
-              src="https://media.moddb.com/images/downloads/1/193/192889/MOSHED-2020-2-20-22-48-16.gif"
+              src="https://media.moddb.com/images/downloads/1/193/192889/MOSHED-2020-2-20-22-48-16.gif" alt="img"
               className="text-center imgPEND"
             />
           </Card.Body>
