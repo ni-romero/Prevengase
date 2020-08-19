@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import Layout from "../components/layout"
 import Footer from "../components/footer"
 import { Container, Row, Col, Form, Button } from "react-bootstrap"
@@ -94,10 +94,11 @@ window.location.href= response.data.redirectUrl
                   {errors.nombre && errors.nombre.message}
               </span>
 
-                </Form.Group>
+                   
+                  </Form.Group>
 
-                <Form.Group controlId="formBasicPassword">
-                  <Form.Label className="text-center">Email</Form.Label>
+                  <Form.Group controlId="formBasicPassword">
+                    <Form.Label className="text-center">Email</Form.Label>
 
                   <Form.Control type="email" 
                   placeholder="Ingrese e-mail"
@@ -147,7 +148,7 @@ window.location.href= response.data.redirectUrl
       <br/>
       
       </Layout>
-      <Footer/>
+      <Footer />
     </>
   )
 }
