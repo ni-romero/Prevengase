@@ -31,4 +31,4 @@ const pagoFallido = () => {
   )
 }
 
-export default pagoFallido
+export default pagoFallido;

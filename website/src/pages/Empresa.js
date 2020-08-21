@@ -7,15 +7,19 @@ import "./empresa.css"
 import axiosInstance from "../components/axiosInstance"
 
 const Empresa = () => {
-  const { register, handleSubmit, errors } = useForm()
+  const { register, handleSubmit, errors , reset} = useForm()
 
   const onSubmit = async(data, e) => {
-    console.log(data)
-    let precio = 390
-    const response = await axiosInstance.post("/", { precio: precio })
-    console.log(response.data.redirectUrl)
-    window.location.href = response.data.redirectUrl
-    e.target.reset()
+
+    const {cuit , mail , razon }= data
+    console.log({cuit , mail , razon} )
+    
+    let Datos={precio:390, cuit , razon, email:mail ,tipo:"Empresa"}
+     const response = await axiosInstance.post("/", Datos)
+     console.log(response.data.redirectUrl)
+     window.location.href = response.data.redirectUrl
+         reset();
+   
   }
 
   return (
@@ -58,7 +62,7 @@ const Empresa = () => {
                 <Form.Row>
                   <Form.Group as={Col}>
                     <Form.Control
-                      type="name"
+                      type="text"
                       name="razon"
                       placeholder="Razon Social"
                       ref={register({
@@ -202,4 +206,4 @@ const Empresa = () => {
   )
 }
 
-export default Empresa
+export default Empresa;

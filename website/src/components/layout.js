@@ -1,15 +1,14 @@
-import React from "react"
+import React, { Fragment } from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import Header from "./header"
 import "./styles.css"
 
-
+Fragment
 
 const Layout = ({ children }) => {
   return (
-    <>
-     
+    <Fragment>
       <Helmet>
         <title>Prevengase</title>
         <link
@@ -36,7 +35,7 @@ const Layout = ({ children }) => {
       <Header />
       
       {children}
-    </>
+    </Fragment>
   )
 }
 

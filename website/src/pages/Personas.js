@@ -1,16 +1,16 @@
-import React from "react"
+
+import React, { useState, Fragment } from 'react'
 import Layout from "../components/layout"
 import Footer from "../components/footer"
 import { Container, Row, Col, Form, Button } from "react-bootstrap"
 import "./style.css"
 import { Helmet } from 'react-helmet'
-import {useState} from 'react'
 import { useForm } from 'react-hook-form'
 import axiosInstance from "../components/axiosInstance"
 
 
 const Personas = () => {
-  const {register, errors, handleSubmit} = useForm();
+  const {register, errors, handleSubmit,reset } = useForm();
   
   const [datos, setDatos] = useState({
     nombre: '',
@@ -28,17 +28,17 @@ const handleInputChange = (event) => {
 }
 const enviarDatos = async (event) =>{
   // event.preventDefault();
-  console.log(datos.nombre + ' ' + datos.email)
-  let precio=390
-const response=  await axiosInstance.post("/", {precio:precio})
-console.log(response.data.redirectUrl)
-window.location.href= response.data.redirectUrl
-
-
+  // console.log(datos.nombre + ' ' + datos.email)
+  let Datos={precio:390, nombre:datos.nombre, email:datos.email ,tipo:"Persona"}
+ const response=  await axiosInstance.post("/", Datos)
+ console.log(response.data.redirectUrl)
+ window.location.href= response.data.redirectUrl
+     reset();
 
 }
+
   return (
-    <>
+    <Fragment>
      <Helmet>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     </Helmet>
@@ -149,7 +149,7 @@ window.location.href= response.data.redirectUrl
       
       </Layout>
       <Footer />
-    </>
+    </Fragment>
   )
 }
-export default Personas
+export default Personas;

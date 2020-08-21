@@ -9,15 +9,19 @@ import "./empresa.css"
 
 const Automotor = () => {
 
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, errors ,reset} = useForm();
 
   const onSubmit = async (data, e) =>{
     console.log(data)
-    let precio=750
-const response=  await axiosInstance.post("/", {precio:precio})
-console.log(response.data.redirectUrl)
-window.location.href= response.data.redirectUrl
-    e.target.reset()
+
+ const { mail , patente }= data
+
+
+let Datos={precio:750, patente , email:mail ,tipo:"Automotor"}
+  const response = await axiosInstance.post("/", Datos)
+ window.location.href = response.data.redirectUrl
+     reset();
+
   }
 
   return (
@@ -147,4 +151,4 @@ window.location.href= response.data.redirectUrl
   )
 }
 
-export default Automotor
+export default Automotor;

@@ -16,7 +16,7 @@ const Navigation = () =>
           height="80"
           className="d-inline-block mr-3 "
         />{' '}
-        Inicio
+        Prevengase
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav " className="bg-info mr-2" />
          <Navbar.Collapse id="responsive-navbar-nav" >

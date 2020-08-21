@@ -73,4 +73,4 @@ const Celular = () => (
   </Layout>
 )
 
-export default Celular
+export default Celular;

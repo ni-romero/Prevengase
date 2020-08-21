@@ -11,15 +11,19 @@ import axiosInstance from "../components/axiosInstance"
 
 const FormCelular = () => {
 
-  const {register, errors, handleSubmit} = useForm();
+  const {register, errors, handleSubmit ,reset} = useForm();
 
-  const onSubmit = async(data, e) => {
-      console.log(data)
-      let precio = 750
-    const response = await axiosInstance.post("/", { precio: precio })
-    console.log(response.data.redirectUrl)
-    window.location.href = response.data.redirectUrl
-      e.target.reset();
+  const onSubmit = async(data, e) => {     
+
+       const {numero , email , servicio }= data
+            
+       let Datos={precio:750, numero , servicio, email ,tipo:"Celular"}
+        const response = await axiosInstance.post("/", Datos)
+       console.log(response.data.redirectUrl)
+        window.location.href = response.data.redirectUrl
+           reset();
+  
+
   }
   return (
     <Form id="formCelular"onSubmit={handleSubmit(onSubmit)}>
@@ -54,11 +58,12 @@ const FormCelular = () => {
             <Form.Label className="w-100 text-start  ">
               Ingrese Empresa{" "}
             </Form.Label>
-            <Form.Control as="select" className=" text-center botonEmpresa  ">
-              <option>Personal</option>
+            <Form.Control as="select" className=" text-center botonEmpresa"  name="servicio" type="text"
+            ref={register}>
+             <option>Desconozco</option>
               <option>Movistar</option>
               <option>Claro</option>
-              <option>Desconozco</option>
+              <option>Personal</option>
             </Form.Control>
           </Form.Group>
         </Col>
