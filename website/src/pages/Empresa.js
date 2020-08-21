@@ -52,49 +52,23 @@ const Empresa = () => {
                 method="POST"
               >
                 <h3 className="text-center">Informe Empresa</h3>
-                <Form.Text className="text-bold text-center">
-                  Ingrese uno de los dos campos
-                </Form.Text>
-                <Form.Row>
-                  <Form.Group as={Col}>
+                
                     <Form.Control
                       type="name"
                       name="razon"
-                      placeholder="Razon Social"
+                      placeholder="Razon Social o Cuit"
                       ref={register({
                         maxLength: {
                           value: 60,
                           message: "no mas de 60 caracteres",
                         },
+                        required: { value: true, message: "Razon social o cuit es obligatorio" }
                       })}
                     />
                     <span className="text-danger text-small d-block mb-2">
                       {errors?.razon?.message}
                     </span>
                     <br />
-                  </Form.Group>
-
-                  <Form.Group as={Col}>
-                    <Form.Control
-                      type="number"
-                      name="cuit"
-                      placeholder="Cuit"
-                      ref={register({
-                        maxLength: {
-                          value: 11,
-                          message: "no mas de 11 caracteres",
-                        },
-                        minLength: {
-                          value: 11,
-                          message: "no menos de 11 caracteres",
-                        },
-                      })}
-                    />
-                    <span className="text-danger text-small d-block mb-2">
-                      {errors?.cuit?.message}
-                    </span>
-                  </Form.Group>
-                </Form.Row>
 
                 <Form.Control
                   type="email"
@@ -107,8 +81,8 @@ const Empresa = () => {
                 <span className="text-danger text-small d-block mb-2">
                   {errors?.mail?.message}
                 </span>
-                <Form.Text className="text-bold">
-                  Ingrese el Email donde que desea recibir el informe.
+                <Form.Text className="text-muted">
+                  Ingrese el Email donde desea recibir el informe.
                 </Form.Text>
 
                 <br />

@@ -63,7 +63,7 @@ window.location.href= response.data.redirectUrl
                 <Form.Control type="email" placeholder="Ingrese email" name="mail" ref={register({ required: {value:true, message:'Email es obligatorio'},  })}/>
                 <span className="text-danger text-small d-block mb-2">{errors?.mail?.message}</span>
                 <Form.Text className="text-muted">
-                  Ingrese el Email donde que desea recibir el informe.
+                  Ingrese el Email donde desea recibir el informe.
                 </Form.Text>
                 
                 <br />
