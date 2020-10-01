@@ -1,27 +1,26 @@
-import React from "react"
+import React , {useState} from "react"
 import Layout from "../components/layout"
 import Footer from "../components/footer"
 import Auto from "../images/auto.png"
 import { Container, Row, Form, Col, Button, Alert } from "react-bootstrap"
-import { useForm } from 'react-hook-form'
+import { useForm } from "react-hook-form"
 import axiosInstance from "../components/axiosInstance"
+import ReCAPTCHA from "react-google-recaptcha";
+
 import "./empresa.css"
+const recaptchaRef = React.createRef();
 
 const Automotor = () => {
+  const { register, handleSubmit, errors, reset } = useForm()
+  const [ reca , setReca ] = useState(true)
+  const onSubmit = async (data, e) => {
 
-  const { register, handleSubmit, errors ,reset} = useForm();
+    const { mail, patente } = data
 
-  const onSubmit = async (data, e) =>{
-    console.log(data)
-
- const { mail , patente }= data
-
-
-let Datos={precio:750, patente , email:mail ,tipo:"Automotor"}
-  const response = await axiosInstance.post("/", Datos)
- window.location.href = response.data.redirectUrl
-     reset();
-
+    let Datos = { precio: 750, patente, email: mail, tipo: "Automotor" }
+    const response = await axiosInstance.post("/", Datos)
+    window.location.href = response.data.redirectUrl
+    reset()
   }
 
   return (
@@ -30,12 +29,12 @@ let Datos={precio:750, patente , email:mail ,tipo:"Automotor"}
         <br />
         <Container>
           <div className="infoEmp">
-            <h3 className="tituloAutom">Informe de titular patente automotor
+            <h3 className="tituloAutom">
+              Informe de titular patente automotor
             </h3>
           </div>
           <Row>
-            <Col  xs={12} md={10} lg={6} xl={6}>
-              
+            <Col xs={12} md={10} lg={6} xl={6}>
               <img
                 alt="auto"
                 className="auto"
@@ -49,31 +48,62 @@ let Datos={precio:750, patente , email:mail ,tipo:"Automotor"}
               </p>
             </Col>
 
-            <Col  xs={12} md={10} lg={6} xl={6}>
+            <Col xs={12} md={10} lg={6} xl={6}>
               <Form className="formEmp" onSubmit={handleSubmit(onSubmit)}>
                 <h3 className="text-center">
                   Informe titular patente automotor
                 </h3>
 
-                <Form.Control type="name" name="patente" placeholder="Ingrese patente" 
-                ref={register({
-                  required:  { value: true, message:'Patente es obligatorio'},
-                  maxLength: { value: 7, message:'no mas de 7 caracteres' },
-                  minLength: { value:6, message:'no menos de 6 caracteres'}
-                })} />
-                <span className="text-danger text-small d-block mb-2">{errors?.patente?.message}</span>
+                <Form.Control
+                  type="name"
+                  name="patente"
+                  placeholder="Ingrese patente"
+                  ref={register({
+                    required: {
+                      value: true,
+                      message: "Patente es obligatorio",
+                    },
+                    maxLength: { value: 7, message: "no mas de 7 caracteres" },
+                    minLength: {
+                      value: 6,
+                      message: "no menos de 6 caracteres",
+                    },
+                  })}
+                />
+                <span className="text-danger text-small d-block mb-2">
+                  {errors?.patente?.message}
+                </span>
                 <br />
-              
-                <Form.Control type="email" placeholder="Ingrese email" name="mail" ref={register({ required: {value:true, message:'Email es obligatorio'},  })}/>
-                <span className="text-danger text-small d-block mb-2">{errors?.mail?.message}</span>
+
+                <Form.Control
+                  type="email"
+                  placeholder="Ingrese email"
+                  name="mail"
+                  ref={register({
+                    required: { value: true, message: "Email es obligatorio" },
+                  })}
+                />
+                <span className="text-danger text-small d-block mb-2">
+                  {errors?.mail?.message}
+                </span>
                 <Form.Text className="text-muted">
                   Ingrese el Email donde que desea recibir el informe.
                 </Form.Text>
-                
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey="6LdlhdIZAAAAAE_PP59OyXWQAy8txfmODXWTvOd-"
+                  onChange={() => setReca(false)}
+                />
                 <br />
-                <Button variant="primary" className="botonPers" type="submit"  size="lg" block>
+                <Button
+                  variant="primary"
+                  className="botonPers"
+                  type="submit"
+                  size="lg"
+                  block
+                  disabled={reca}
+                >
                   Comprar informe $750
-                  
                 </Button>
               </Form>
             </Col>
@@ -88,12 +118,10 @@ let Datos={precio:750, patente , email:mail ,tipo:"Automotor"}
                 <li>Marca</li>
                 <li>Modelo</li>
                 <li>Version</li>
-                
               </ul>
             </Col>
             <Col>
               <ul className="preguntas">
-                
                 <li>Año de fabricacion</li>
                 <li>Direccion</li>
                 <li>localidad</li>
@@ -151,4 +179,4 @@ let Datos={precio:750, patente , email:mail ,tipo:"Automotor"}
   )
 }
 
-export default Automotor;
+export default Automotor

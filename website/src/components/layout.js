@@ -4,7 +4,7 @@ import Helmet from "react-helmet"
 import Header from "./header"
 import "./styles.css"
 
-Fragment
+
 
 const Layout = ({ children }) => {
   return (

@@ -1,25 +1,24 @@
-import React from "react"
+import React , {useState} from "react"
 import Layout from "../components/layout"
 import Footer from "../components/footer"
 import { Container, Row, Form, Col, Button, Alert } from "react-bootstrap"
-import { useForm } from 'react-hook-form'
+import { useForm } from "react-hook-form"
 import "./empresa.css"
 import axiosInstance from "../components/axiosInstance"
+import ReCAPTCHA from "react-google-recaptcha";
+
+const recaptchaRef = React.createRef();
 
 const Empresa = () => {
-  const { register, handleSubmit, errors , reset} = useForm()
+  const { register, handleSubmit, errors, reset } = useForm()
+  const [ reca , setReca ] = useState(true)
 
-  const onSubmit = async(data, e) => {
-
-    const {cuit , mail , razon }= data
-    console.log({cuit , mail , razon} )
-    
-    let Datos={precio:390, cuit , razon, email:mail ,tipo:"Empresa"}
-     const response = await axiosInstance.post("/", Datos)
-     console.log(response.data.redirectUrl)
-     window.location.href = response.data.redirectUrl
-         reset();
-   
+  const onSubmit = async (data, e) => {
+    const { cuit, mail, razon } = data
+    let Datos = { precio: 390, cuit, razon, email: mail, tipo: "Empresa" }
+    const response = await axiosInstance.post("/", Datos)
+    window.location.href = response.data.redirectUrl
+    reset()
   }
 
   return (
@@ -28,10 +27,7 @@ const Empresa = () => {
         <br />
         <Container>
           <div className="text-center">
-            <h3  style={{color:'#B48B1B'}}>
-              {" "}
-             Informe de empresa
-            </h3>
+            <h3 style={{ color: "#B48B1B" }}> Informe de empresa</h3>
           </div>
           <Row>
             <Col xs={12} md={10} xl={6}>
@@ -116,6 +112,11 @@ const Empresa = () => {
                 </Form.Text>
 
                 <br />
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey="6LdlhdIZAAAAAE_PP59OyXWQAy8txfmODXWTvOd-"
+                  onChange={() => setReca(false)}
+                />
 
                 <Button
                   variant="primary"
@@ -123,12 +124,9 @@ const Empresa = () => {
                   type="submit"
                   size="lg"
                   block
+                  disabled={reca}
                 >
                   Comprar informe $390
-                  <script
-                    src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-                    data-preference-id="267818641-2711766f-49a0-4275-970f-31d0c5c8e79c"
-                  ></script>
                 </Button>
               </Form>
             </Col>
@@ -206,4 +204,4 @@ const Empresa = () => {
   )
 }
 
-export default Empresa;
+export default Empresa
